@@ -25,6 +25,8 @@ class ViewController: UIViewController, View1Delegate {
 
 
     @IBAction func goView1IsTapped(sender: AnyObject) {
+        
+        //If dont want segue you can add code pramagtically here and remember asign delegate same with prepare segue
         self.performSegueWithIdentifier(segue1, sender: nil)
     }
     
@@ -37,6 +39,7 @@ class ViewController: UIViewController, View1Delegate {
     
     func dismissViewController(controller: UIViewController) {
         controller.dismissViewControllerAnimated(true) { () -> Void in
+            //Perform segue or push some view with your code
             self.performSegueWithIdentifier(self.segue2, sender: nil)
         }
     }
