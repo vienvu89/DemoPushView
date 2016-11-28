@@ -9,7 +9,7 @@
 import UIKit
 
 protocol View1Delegate: class {
-    func dismissViewController(controller: UIViewController)
+    func dismissViewController(_ controller: UIViewController)
 }
 
 class ViewController1: UIViewController {
@@ -38,7 +38,7 @@ class ViewController1: UIViewController {
     }
     */
 
-    @IBAction func backViewIsTapped(sender: AnyObject) {
+    @IBAction func backViewIsTapped(_ sender: AnyObject) {
         if self.delegate != nil {
             self.delegate.dismissViewController(self)
         }

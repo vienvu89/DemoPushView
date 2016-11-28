@@ -24,23 +24,23 @@ class ViewController: UIViewController, View1Delegate {
     }
 
 
-    @IBAction func goView1IsTapped(sender: AnyObject) {
+    @IBAction func goView1IsTapped(_ sender: AnyObject) {
         
         //If dont want segue you can add code pramagtically here and remember asign delegate same with prepare segue
-        self.performSegueWithIdentifier(segue1, sender: nil)
+        self.performSegue(withIdentifier: segue1, sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segue1 {
-            let controller = segue.destinationViewController as! ViewController1
+            let controller = segue.destination as! ViewController1
             controller.delegate = self
         }
     }
     
-    func dismissViewController(controller: UIViewController) {
-        controller.dismissViewControllerAnimated(true) { () -> Void in
+    func dismissViewController(_ controller: UIViewController) {
+        controller.dismiss(animated: true) { () -> Void in
             //Perform segue or push some view with your code
-            self.performSegueWithIdentifier(self.segue2, sender: nil)
+            self.performSegue(withIdentifier: self.segue2, sender: nil)
         }
     }
 }
